@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory><!--conn -->
+
+	  <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+      <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate?characterEncoding=UTF-8;</property>
+      <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+      <property name="hibernate.connection.username">root</property>
+      <property name="hibernate.connection.password">Prin@2014</property>
+      <property name="hibernate.connection.pool_size">10</property>
+      <property name="show_sql">true</property>
+      <property name="hibernate.connection.autocommit">true</property>
+      <!--  <property name="hibernate.hbm2ddl.auto">update</property>-->
+      <property name="hibernate.hbm2ddl.auto">update</property>
+      <property name="hibernate.connection.characterEncoding">utf8</property>
+      <mapping class="com.miit.dao.Player"/>
+      <!-- one to one relationship -->
+      <mapping class="com.miit.oto.Account"/>
+      <mapping class="com.miit.oto.Employee"/>
+      <!-- one to many relationship -->
+      <mapping class="com.miit.otm.Laptop"/>
+      <mapping class="com.miit.otm.Student"/>
+      <!-- many to one relationship -->
+      <mapping class="com.miit.mto.Question"/>
+      <mapping class="com.miit.mto.Answer"/>
+      <!-- many to many relationship -->
+      <mapping class="com.miit.mtm.Emp"/>
+      <mapping class="com.miit.mtm.Project"/>
+      
+      
+      </session-factory>
+</hibernate-configuration>
