@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register Login Page</title>
+
+<head>
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+	<div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+
+                <form action="login" method="post">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required name="email">
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Enter your password" required name="upass">
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a user?
+                        <a href="#" class="text signup-link">Register Now</a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title">Registration</span>
+
+                <form action="register" method="post">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your userID" required name="uname">
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required name="email" >
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Create a password" required name="upass">
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already a user?
+                        <a href="#" class="text login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+	<script src="js/script.js" type="text/javascript"></script>
+	
+</body>
+</html>

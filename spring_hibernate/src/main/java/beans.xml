@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="https://www.springframework.org/schema/context/"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://wwww.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://Localhost:3306/miit"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="Prin@2014"></property>
+	</bean>
+
+	<bean id="factory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="ds"></property>
+		<property name="annotatedClasses">
+			<value>com.miit.user.User</value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<!-- <prop key="hibernate.show_sql">true</prop> -->
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="temp"
+		class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="factory"></property>
+	</bean>
+
+	<bean id="dao" class="com.miit.dao.UserDao">
+		<property name="hibernateTemplate" ref="temp"></property>
+	</bean>
+
+</beans>
